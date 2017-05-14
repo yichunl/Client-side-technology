@@ -1,0 +1,23 @@
+<div>
+ <table class="table table-striped">
+  <tr>
+    <th>&nbsp &nbsp</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+  <tr data-ng-repeat="data in dataSet">
+  <td data-ng-click="delete(data.key,$index)" class="cross">&#10060</td>
+  <td>
+  	<a ng-href="#!/contact/{{data.key}}">
+  		{{ data.FirstName + " " + data.LastName }}
+  	</a>
+  </td>
+  <td>{{ data.Email }}</td>
+  <td>{{ data.Phone }}</td>
+  </tr>
+</table>
+<button type="button" data-ng-click="go('')">Add Contact</button>
+<!-- <button type="button" data-ng-click="showdata()">Show Data</button>
+<button type="button" data-ng-click="cleardata()">Clear Data</button> -->
+</div>

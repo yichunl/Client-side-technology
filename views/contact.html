@@ -1,0 +1,56 @@
+<form data-ng-submit="submit()">
+<div class="container">
+<div class="row">
+  <div class="col-sm-6">
+	  <div class="panel panel-default" >
+	    <div class="panel-heading">
+	    	Contact Information
+	    </div>
+	    <div class="panel-body">
+	    	First Name: <input type="text" data-ng-model="Contact.FirstName" placeholder="Enter first name"><br>
+			Last Name: <input type="text" data-ng-model="Contact.LastName" placeholder="Enter last name"><br>
+			Email: <input type="text" data-ng-model="Contact.Email" placeholder="Enter email"><br>
+			Phone Number: <input type="text" data-ng-model="Contact.Phone" placeholder="Enter phone#"><br>
+			Address: <input type="text" data-ng-model="Contact.Address" placeholder="Enter address"><br>
+			City: <input type="text" data-ng-model="Contact.City" placeholder="Enter city"><br>
+			<!-- State: <input type="text" data-ng-model="Contact.State"><br> -->
+			State:
+			<select 
+			    ng-model="Contact.State" 
+			    ng-options="option for option in options">
+			</select>
+			<br>
+			Zip Code: <input type="text" data-ng-model="Contact.ZipCode" placeholder="Enter zip Code"><br>
+			<input type="submit" value="Save">
+	    </div>
+	  </div>
+  </div>
+
+  <div class="col-sm-6">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">Photo</div>
+	    	<input type="file" csw-file-input file-data="Contact.Avatar">
+	    	<br>
+			<img style="width: 250px;" ng-src="{{ Contact.Avatar }}">
+	    <div class="panel-body">
+	    </div>
+	  </div>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading">Map</div>
+	    <div class="panel-body">
+	    	<ng-map center="{{Contact.Address}},{{Contact.City}},{{Contact.State}},{{Contact.Zip}},US">
+	            <marker
+	                position="{{Contact.Address}},{{Contact.City}},{{Contact.State}},{{Contact.Zip}},US">
+	            </marker>
+	        </ng-map>
+	    </div>
+	  </div>
+  </div>
+
+</div>
+
+</div>
+
+</form>
+
